@@ -1,7 +1,14 @@
 import './App.css'
+import AppLayout from './layouts/appLayout';
 
 function App() {
-    return <h1>Portfolio</h1>;
+
+    return (
+        <AppLayout>
+            <h1>Portfolio</h1>
+        </AppLayout>
+    );
+
 }
 
 export default App;
