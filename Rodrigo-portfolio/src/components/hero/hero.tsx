@@ -1,16 +1,24 @@
-import HeroContent from "./HeroVisual";
-import HeroVisual from "./HeroVisual";
+import Container from '@/components/layout/container';
+import HeroContent from './HeroContent';
+import HeroVisual from './HeroVisual';
 
-export default function Hero() {
+export  function Hero() {
   return (
     <section
-      id="hero"
-      className="flex min-h-[calc(100vh-4rem)] items-center"
+      id="home"
+      className="relative overflow-hidden py-24 lg:py-36"
     >
-      <div className="grid w-full gap-16 lg:grid-cols-2 lg:items-center">
-        <HeroContent />
-        <HeroVisual />
-      </div>
+      <Container>
+        <div className="grid items-center gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <HeroContent />
+          </div>
+
+          <div className="lg:col-span-7">
+            <HeroVisual />
+          </div>
+        </div>
+      </Container>
     </section>
   );
 }

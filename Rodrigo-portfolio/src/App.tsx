@@ -1,5 +1,5 @@
-import AppLayout from "./layouts/AppLayout";
-import Hero from "./components/sections/Hero/Hero";
+import AppLayout from "./layouts/appLayout";
+import { Hero } from "./components/hero/hero";
 
 function App() {
   return (
