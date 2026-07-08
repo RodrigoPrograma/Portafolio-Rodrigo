@@ -9,9 +9,14 @@ export default function HeroContent() {
       </span>
 
       <div className="space-y-4">
-        <h1 className="text-5xl font-semibold tracking-tight text-neutral-950 lg:text-7xl">
-          Full Stack Developer
-        </h1>
+
+        <h1 className="text-5xl font-semibold tracking-tight text-neutral-950 lg:text-2xl">
+      <span className="block text-2xl font-medium text-neutral-500">
+        Rodrigo Alonzo
+      </span>
+
+      Full Stack Developer
+    </h1>
 
         <p className="max-w-xl text-lg leading-8 text-neutral-600">
           Desarrollo aplicaciones web modernas enfocadas en rendimiento,

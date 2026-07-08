@@ -1,9 +1,12 @@
+import BackgroundCard from './visual/backgroundCard';
+
 export default function HeroVisual() {
   return (
-    <div className="flex justify-center lg:justify-end">
+    <div className="relative flex items-center justify-center">
 
-      <div className="h-96 w-full max-w-md rounded-3xl border border-neutral-200 from-white to-neutral-100 shadow-sm" />
-
+      {/* Próximamente */}
+      {/* <ProfileImage /> */}
+      <BackgroundCard />
     </div>
   );
 }

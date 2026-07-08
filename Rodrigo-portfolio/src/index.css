@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/GeistFonts/Geist-SemiBold.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* =========================
    DESIGN TOKENS (BASE)
 ========================= */
 
 :root {
-  /* Background */
-  --background: #09090b;
-  --surface: #18181b;
-  --surface-elevated: #27272a;
-
-  /* Text */
+    /* Background */
+    --background: #09090b;
+    --surface: #18181b;
+    --surface-elevated: #27272a;
+    
+    /* Text */
+    --font-family: "Geist", sans-serif;
   --text-primary: #fafafa;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
@@ -52,7 +61,7 @@ body {
   margin: 0;
   color: var(--text-secondary);
   background: var(--background);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -80,7 +89,7 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--text-primary);
+    font-family: var(--font-family);
   font-weight: 500;
   margin: 0;
 }
