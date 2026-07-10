@@ -1,15 +1,12 @@
-import './App.css'
-import AppLayout from './layouts/appLayout';
+import AppLayout from "./layouts/appLayout";
+import { Hero } from "./components/hero/hero";
 
 function App() {
-
-    return (
-        <AppLayout>
-            <h1>Portfolio</h1>
-        </AppLayout>
-    );
-
+  return (
+    <AppLayout>
+      <Hero />
+    </AppLayout>
+  );
 }
 
 export default App;
-
