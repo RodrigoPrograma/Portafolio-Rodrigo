@@ -7,7 +7,8 @@ export default function PrincipleGrid() {
       className="
         grid
         gap-6
-        md:grid-cols-2
+        grid-cols-1
+md:grid-cols-2
       "
     >
       {principles.map((principle) => (
