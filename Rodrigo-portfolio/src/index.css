@@ -19,7 +19,7 @@
 
 :root {
     /* Background */
-    --background: #09090b;
+    --background: #0f0f10;
     --surface: #18181b;
     --surface-elevated: #27272a;
     --cursor: default;
@@ -29,10 +29,22 @@
   --text-primary: #fafafa;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
+  
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  /* Hover Effects */
+  --shadow-accent:
+    0 0 0 1px rgba(6, 182, 212, 0.08),
+    0 10px 30px rgba(6, 182, 212, 0.06);
+
 
   /* Borders */
   --border: #27272a;
   --border-hover: #3f3f46;
+  --border-color: var(--accent);
 
   /* Accent */
   --accent: #06b6d4;

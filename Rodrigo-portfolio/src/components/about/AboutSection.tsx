@@ -23,18 +23,16 @@ export default function AboutSection() {
   </Reveal>
 
   <Reveal className="mt-16" delay={300}>
-    <p
-      className="
-        max-w-xl
-        text-lg
-        leading-relaxed
-        text-text
-      "
-    >
-      Cada decisión técnica tiene un propósito:
-      crear productos mantenibles, rápidos y preparados
-      para crecer.
-    </p>
+    <div className="mt-20 border-t border-[var(--border)] pt-8"></div>
+    <br/>
+    <p className="max-w-xl text-text leading-relaxed">
+  Cada decisión técnica tiene un propósito.
+</p>
+
+<p className="mt-2 text-text font-medium">
+  Crear productos mantenibles,
+  rápidos y preparados para crecer.
+</p>
   </Reveal>
     </section>
   );
