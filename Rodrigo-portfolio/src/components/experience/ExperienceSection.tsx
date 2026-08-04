@@ -22,17 +22,17 @@ export default function ExperienceSection() {
         gap-16
         px-6
         py-32
-      "
+        "
         >
-            <header className="max-w-2xl">
+            <header className="max-w-2xl mb-7">
                 <p
                     className="
             text-sm
             font-medium
             uppercase
             tracking-[0.2em]
-            text-[var(--accent)]
-          "
+            text-(--accent)
+            "
                 >
                     Experiencia
                 </p>
@@ -42,8 +42,8 @@ export default function ExperienceSection() {
             mt-4
             text-4xl
             font-semibold
-            text-[var(--text-primary)]
-          "
+            text-(--text-text)
+            "
                 >
                     Mi evolución como desarrollador.
                 </h2>
@@ -53,8 +53,8 @@ export default function ExperienceSection() {
             mt-6
             text-lg
             leading-relaxed
-            text-[var(--text-secondary)]
-          "
+            text-(--text-secondary)
+            "
                 >
                     Cada etapa representa un aprendizaje que fue ampliando mi forma de
                     construir productos digitales, desde mis primeros pasos hasta el
