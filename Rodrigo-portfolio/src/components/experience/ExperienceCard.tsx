@@ -37,11 +37,15 @@ export default function ExperienceCard({
   <motion.img
     key={experience.id}
     src={experience.image}
-    alt={experience.title}
+    alt={`Imagen de ${experience.title}`}
     variants={fade}
     initial="hidden"
     animate="visible"
     exit="exit"
+    transition={{
+    duration: 0.5,
+    ease: "easeOut",
+}}
     className="
       h-full
       w-full

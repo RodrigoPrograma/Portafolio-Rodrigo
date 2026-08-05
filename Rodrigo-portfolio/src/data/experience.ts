@@ -48,7 +48,7 @@ export const experiences: Experience[] = [
         technologies: [
             "React",
             "Design Systems",
-            "Arquitectura de componentes",
+            "Arquitectura",
             "Accessibilidad",
             "Rendimiento",
         ],
