@@ -23,14 +23,14 @@ export default function ExperienceCard({
         transition-opacity
         duration-300
         ease-in-out
-      "
+        "
         >
             <div
                 className="
-          relative
-          aspect-video
-          overflow-hidden
-          md:aspect-auto
+            relative
+            aspect-video
+            overflow-hidden
+            md:aspect-auto
         "
             >
                 <AnimatePresence mode="wait">
