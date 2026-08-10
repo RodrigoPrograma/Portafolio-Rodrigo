@@ -1,4 +1,6 @@
 import type { Experience } from "@/types/experience";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 interface ExperienceRoadmapProps {
     experiences: Experience[];
@@ -6,74 +8,119 @@ interface ExperienceRoadmapProps {
     onSelect: (experience: Experience) => void;
 }
 
+
 export default function ExperienceRoadmap({
+
     experiences,
     selectedId,
     onSelect,
 }: ExperienceRoadmapProps) {
-    const activeIndex = experiences.findIndex(
-  ({ id }) => id === selectedId
-);
-
-const progress =
-  (activeIndex / (experiences.length +1 )) * 100;
     
+  const roadmapNodes = useRef<Record<string, HTMLButtonElement | null>>({});
+
+    const activeIndex = experiences.findIndex(
+        ({ id }) => id === selectedId
+    );
+    useEffect(() => {
+  const activeNode = roadmapNodes.current[selectedId];
+
+  activeNode?.scrollIntoView({
+    inline: "center"
+  });
+}, [selectedId]);
+    const handleSelect = (experience: Experience, index: number) => {
+  onSelect(experience);
+
+  const nextNode = nodeRefs.current[index + 1];
+  const roadmap = roadmapRef.current;
+
+  if (!nextNode || !roadmap) return;
+
+  const hasHorizontalScroll =
+    roadmap.scrollWidth > roadmap.clientWidth;
+
+  if (!hasHorizontalScroll) return;
+
+  const nextNodeLeft = nextNode.offsetLeft;
+
+  roadmap.scrollTo({
+    left: nextNodeLeft - roadmap.clientWidth / 2,
+    behavior: "smooth",
+  });
+};
+    const roadmapRef = useRef<HTMLElement>(null);
+    const nodeRefs = useRef<(HTMLLIElement | null)[]>([]);
+    const progress =
+        (activeIndex / (experiences.length + 0.5)) * 100;
+
     return (
         <nav
+            ref={roadmapRef}
             aria-label="Experiencia profesional"
             className="
     relative
     w-full
     overflow-x-auto
     pb-4
-    "
+    scrollbar-none
+    [-ms-overflow-style:none]
+    [&::-webkit-scrollbar]:hidden
+  "
+        ><ol
+            className="
+  relative
+  flex
+  w-max
+  min-w-max
+  items-start
+  justify-start
+  md:justify-center
+  gap-8
+  px-6
+"
         >
-            <div
-                className="
-                z-index-0
+                {/* línea base */}
+                <div
+                    aria-hidden="true"
+                    className="
         absolute
         left-6
         right-6
         top-6
         h-0.5
         bg-(--border)
-    "
-            />
-            <div
-                className="
-                z-index-1
+      "
+                />
+
+                {/* progreso */}
+                <div
+                    aria-hidden="true"
+                    className="
         absolute
         left-6
-        right-6
         top-6
         h-0.5
         bg-(--accent)
-    transition-all
-    duration-500
-    ease-out
-    "
-    style={{
-    width: `calc(${progress}% + 5rem)`,
-  }}
-            />
+        transition-[width]
+        duration-500
+        ease-out
+      "
+                    style={{
+                        width: `calc(${progress}% + 5rem)`,
+                    }}
+                />
 
-            <ol
-                className="
-        z-1
-        relative
-      flex
-      min-w-max
-      items-start
-      gap-8
-      justify-center
-    "
-            >
-                {experiences.map((experience) => {
+
+                {experiences.map((experience, index) => {
                     const isActive = experience.id === selectedId;
 
                     return (
                         <li
+
                             key={experience.id}
+                            ref={(element) => {
+                                nodeRefs.current[index] = element;
+                            }}
                             className="
                 flex
                 flex-col
@@ -84,7 +131,7 @@ const progress =
                         >
                             <button
                                 type="button"
-                                onClick={() => onSelect(experience)}
+                                onClick={() => handleSelect(experience, index)}
                                 aria-current={isActive ? "step" : undefined}
                                 className="
                                     group
@@ -94,8 +141,8 @@ const progress =
                                     gap-3
                                 "
                             >
-                            <span
-                                className={`
+                                <span
+                                    className={`
                                     flex
                                     h-13
                                     w-13
@@ -109,16 +156,16 @@ const progress =
                                             font-medium
                                             transition-colors
                                             ${isActive
-                                                                    ? `
+                                            ? `
                                                     border-(--accent)
                                                     text-(--accent)
                                                 `
-                                                                    : `
+                                            : `
                                                     border-(--border)
                                                     text-(--text-secondary)
                                                     group-hover:text-(--text-primary)
                                                 `
-                                                                }
+                                        }
                                         `}
                                 >
                                     {experience.id}
