@@ -88,7 +88,7 @@ export const experiences: Experience[] = [
         ],
     },
     {
-        id: "NOW",
+        id: "M-06",
         title: "Construyendo el siguiente nivel",
         period: "Hoy",
         category: "Fullstack",
