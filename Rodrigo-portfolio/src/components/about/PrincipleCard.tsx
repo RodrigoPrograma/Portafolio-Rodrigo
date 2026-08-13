@@ -41,7 +41,7 @@ export default function PrincipleCard({
                 className="
             text-xl
             font-semibold
-            text(--text-primary)
+            text-(--text-primary)
         "
             >
                 {principle.title}
@@ -51,7 +51,7 @@ export default function PrincipleCard({
                 className="
             mt-3
             leading-relaxed
-            text(--text-secondary)
+            text-(--text-secondary)
         "
             >
                 {principle.description}

@@ -51,7 +51,7 @@ export default function ExperienceRoadmap({
     const roadmapRef = useRef<HTMLElement>(null);
     const nodeRefs = useRef<(HTMLLIElement | null)[]>([]);
     const progress =
-        (activeIndex / (experiences.length + 0.5)) * 100;
+        (activeIndex / (experiences.length + 0.5)) * 105;
 
     return (
         <nav
@@ -70,13 +70,13 @@ export default function ExperienceRoadmap({
             className="
   relative
   flex
-  w-max
   min-w-max
   items-start
   justify-start
   md:justify-center
   gap-8
   px-6
+
 "
         >
                 {/* línea base */}
