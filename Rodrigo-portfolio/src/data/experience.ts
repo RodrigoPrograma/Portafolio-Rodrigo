@@ -1,4 +1,4 @@
-import InitialImage from "../assets/experience/Initial.png";
+import InitialImage from "../assets/experience/initial.png";
 import FreelanceImage from "../assets/experience/freelance.jpg";
 import wordpressImg from "../assets/experience/wordpress.jpg";
 import architectureImg from "../assets/experience/architecture.jpg";
