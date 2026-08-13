@@ -1,9 +1,9 @@
 import PortfolioImg from "../assets/projects/portafolio.png";
-import postman from "../assets/projects/postman.png";
-import estudio from "../assets/projects/estudio.png";
+import postman from "../assets/projects/Postman.png";
+import estudio from "../assets/projects/Estudio.png";
 import vientos from "../assets/projects/vientos.png";
-import uñas from "../assets/projects/nails.png";
-import hamburguesa from "../assets/projects/hamburguesa.png";
+import uñas from "../assets/projects/Nails.png";
+import hamburguesa from "../assets/projects/Hamburguesa.png";
 
 import type { Project } from "@/types/project";
 
