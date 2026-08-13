@@ -30,7 +30,7 @@ export default function Navbar() {
               </a>
 
               <a 
-                href="#contact"
+                href="mailto:ralonzo1337@gmail.com"
                 className="transition hover:text-black"
               >
                 Contact

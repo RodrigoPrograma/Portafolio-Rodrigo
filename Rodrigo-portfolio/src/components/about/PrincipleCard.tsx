@@ -15,20 +15,20 @@ export default function PrincipleCard({
         group
         rounded-2xl
         border
-        border-[var(--border)]
-        bg-[var(--surface)]
+        border-(--border)
+        bg-(--surface)
         p-6
         transition-all
         duration-300
-        hover:border-[var(--border-hover)]
-        hover:shadow-[var(--shadow-accent)]
+        hover:(--border-hover)
+        hover:(--shadow-accent)
         "
         >
 
             <div
                 className="
                 mb-6
-                text-[var(--accent)]
+                text-(--accent)
                 transition-transform
                 duration-300
                 group-hover:scale-103
@@ -41,7 +41,7 @@ export default function PrincipleCard({
                 className="
             text-xl
             font-semibold
-            text-[var(--text-primary)]
+            text(--text-primary)
         "
             >
                 {principle.title}
@@ -49,9 +49,9 @@ export default function PrincipleCard({
 
             <p
                 className="
-          mt-3
-          leading-relaxed
-          text-[var(--text-secondary)]
+            mt-3
+            leading-relaxed
+            text(--text-secondary)
         "
             >
                 {principle.description}

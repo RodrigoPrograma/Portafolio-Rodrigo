@@ -10,7 +10,9 @@ export default function HeroActions() {
       </a>
 
       <a
-        href="#contact"
+        href="https://wa.me/message/AXKEZI2N2RCAI1"
+        target="_blank"
+        rel="noreferrer"
         className="rounded-xl border border-neutral-300 px-6 py-3 transition hover:bg-neutral-100"
       >
         Contactarme
