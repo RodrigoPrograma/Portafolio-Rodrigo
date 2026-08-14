@@ -101,6 +101,7 @@ export default function ExperienceCard({
                     className="
             leading-relaxed
             text-(--text-secondary)
+            md:text-2xl
           "
                 >
                     {experience.description}

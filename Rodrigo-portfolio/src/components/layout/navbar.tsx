@@ -16,26 +16,23 @@ export default function Navbar() {
               className="flex gap-6 text-sm text-gray-600"
             >
               <a 
-                href="#projects"
-                className="transition hover:text-black"
-              >
-                Projects
-              </a>
-
-              <a 
                 href="#about"
                 className="transition hover:text-black"
               >
-                About
+                Sobre mí
               </a>
-
               <a 
                 href="mailto:ralonzo1337@gmail.com"
                 className="transition hover:text-black"
               >
-                Contact
+                Experiencia
               </a>
-
+              <a 
+                href="#projects"
+                className="transition hover:text-black"
+              >
+                Proyectos
+              </a>
             </nav>
 
           </div>
