@@ -12,32 +12,100 @@ export default function ExperienceRoadmap({
   selectedId,
   onSelect,
 }: ExperienceRoadmapProps) {
-  const roadmapRef = useRef<HTMLElement>(null);
-  const nodeRefs = useRef<(HTMLLIElement | null)[]>([]);
+    
+  const roadmapNodes = useRef<Record<string, HTMLButtonElement | null>>({});
 
-  const activeIndex = experiences.findIndex(
-    ({ id }) => id === selectedId
-  );
+    const activeIndex = experiences.findIndex(
+        ({ id }) => id === selectedId
+    );
+    useEffect(() => {
+  const activeNode = roadmapNodes.current[selectedId];
 
-  const [progressWidth, setProgressWidth] = useState(0);
+  activeNode?.scrollIntoView({
+    inline: "center"
+  });
+}, [selectedId]);
+    const handleSelect = (experience: Experience, index: number) => {
+  onSelect(experience);
 
-  useEffect(() => {
-    const roadmap = roadmapRef.current;
-    const activeNode = nodeRefs.current[activeIndex];
+  const nextNode = nodeRefs.current[index + 1];
+  const roadmap = roadmapRef.current;
 
-    if (!roadmap || !activeNode) return;
+  if (!nextNode || !roadmap) return;
 
-    const roadmapRect = roadmap.getBoundingClientRect();
-    const nodeRect = activeNode.getBoundingClientRect();
+  const hasHorizontalScroll =
+    roadmap.scrollWidth > roadmap.clientWidth;
 
-    const nodeCenter =
-      nodeRect.left +
-      nodeRect.width / 2 -
-      roadmapRect.left +
-      roadmap.scrollLeft;
+  if (!hasHorizontalScroll) return;
 
-    setProgressWidth(nodeCenter);
-  }, [activeIndex, experiences.length]);
+  const nextNodeLeft = nextNode.offsetLeft;
+
+  roadmap.scrollTo({
+    left: nextNodeLeft - roadmap.clientWidth / 2,
+    behavior: "smooth",
+  });
+};
+    const roadmapRef = useRef<HTMLElement>(null);
+    const nodeRefs = useRef<(HTMLLIElement | null)[]>([]);
+    const progress =
+        (activeIndex / (experiences.length + 0.5)) * 105;
+
+    return (
+        <nav
+            ref={roadmapRef}
+            aria-label="Experiencia profesional"
+            className="
+    relative
+    w-full
+    overflow-x-auto
+    pb-4
+    scrollbar-none
+    [-ms-overflow-style:none]
+    [&::-webkit-scrollbar]:hidden
+  "
+        ><ol
+            className="
+  relative
+  flex
+  min-w-max
+  items-start
+  justify-start
+  md:justify-center
+  gap-8
+  px-6
+
+"
+        >
+                {/* línea base */}
+                <div
+                    aria-hidden="true"
+                    className="
+        absolute
+        left-6
+        right-6
+        top-6
+        h-0.5
+        bg-(--border)
+      "
+                />
+
+                {/* progreso */}
+                <div
+                    aria-hidden="true"
+                    className="
+        absolute
+        left-6
+        top-6
+        h-0.5
+        bg-(--accent)
+        transition-[width]
+        duration-500
+        ease-out
+      "
+                    style={{
+                        width: `calc(${progress}% + 5rem)`,
+                    }}
+                />
 
   const handleSelect = (experience: Experience, index: number) => {
     onSelect(experience);

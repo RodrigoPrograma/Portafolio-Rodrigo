@@ -104,4 +104,4 @@ export const experiences: Experience[] = [
         ],
         current: true,
     },
-];
+] satisfies Experience[];;

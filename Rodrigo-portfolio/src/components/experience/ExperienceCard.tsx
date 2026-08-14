@@ -23,14 +23,14 @@ export default function ExperienceCard({
         transition-opacity
         duration-300
         ease-in-out
-      "
+        "
         >
             <div
                 className="
-          relative
-          aspect-video
-          overflow-hidden
-          md:aspect-auto
+            relative
+            aspect-video
+            overflow-hidden
+            md:aspect-auto
         "
             >
                 <AnimatePresence mode="wait">
@@ -70,7 +70,7 @@ export default function ExperienceCard({
               text-sm
               uppercase
               tracking-[0.2em]
-              text-[var(--accent)]
+              text-(--accent)
             "
                     >
                         {experience.category}
@@ -80,7 +80,7 @@ export default function ExperienceCard({
                         className="
               mt-2
               text-sm
-              text-[var(--text-secondary)]
+              text-(--text-secondary)
             "
                     >
                         {experience.period}
@@ -91,7 +91,7 @@ export default function ExperienceCard({
                     className="
             text-3xl
             font-semibold
-            text-[var(--text-primary)]
+            text-(--text-primary)
           "
                 >
                     {experience.title}
@@ -100,7 +100,8 @@ export default function ExperienceCard({
                 <p
                     className="
             leading-relaxed
-            text-[var(--text-secondary)]
+            text-(--text-secondary)
+            md:text-2xl
           "
                 >
                     {experience.description}
@@ -119,11 +120,11 @@ export default function ExperienceCard({
                             className="
                 rounded-full
                 border
-                border-[var(--border)]
+                border-(--border)
                 px-3
                 py-1
                 text-sm
-                text-[var(--text-secondary)]
+                text-(--text-secondary)
               "
                         >
                             {technology}
