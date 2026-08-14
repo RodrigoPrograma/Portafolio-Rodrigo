@@ -22,7 +22,7 @@ export default function Navbar() {
                 Sobre mí
               </a>
               <a 
-                href="mailto:ralonzo1337@gmail.com"
+                href="#experience"
                 className="transition hover:text-black"
               >
                 Experiencia
@@ -32,6 +32,12 @@ export default function Navbar() {
                 className="transition hover:text-black"
               >
                 Proyectos
+              </a>
+              <a 
+                href="mailto:ralonzo1337@gmail.com"
+                className="transition hover:text-black"
+              >
+                Contacto
               </a>
             </nav>
 
